@@ -18,6 +18,11 @@ def right_rotate(y:Node)->Node:
     x.height = max(height(x.left), height(x.right)) + 1
     return x
 
+def big_right_rotate(x:Node)->Node:
+    return right_rotate(left_rotate(x.left))
+
+def big_left_rotate(x:Node)->Node:
+    return left_rotate(right_rotate(x.right))
 
 def left_rotate(x:Node)->Node:
     y = x.right
